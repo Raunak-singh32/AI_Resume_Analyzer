@@ -3,7 +3,7 @@
 > An AI-powered resume analyzer that helps you beat Applicant Tracking Systems and land your dream job.
 
 [![Live Demo](https://img.shields.io/badge/Live%20Demo-Visit%20App-4f46e5?style=for-the-badge)](https://ai-resume-analyzer-ecru-omega.vercel.app)
-[![GitHub](https://img.shields.io/badge/GitHub-Repository-181717?style=for-the-badge&logo=github)](https://github.com/harsh2005-singh/AI-Resume-Analyzer)
+[![GitHub](https://img.shields.io/badge/GitHub-Repository-181717?style=for-the-badge&logo=github)](https://github.com/Raunak-singh32/AI_Resume_Analyzer)
 
 ## 🌐 Live Demo
 **[https://ai-resume-analyzer-ecru-omega.vercel.app](https://ai-resume-analyzer-ecru-omega.vercel.app)**
@@ -64,7 +64,7 @@
 
 **1. Clone the repository**
 ```bash
-git clone https://github.com/harsh2005-singh/AI-Resume-Analyzer.git
+ git clone https://github.com/Raunak-singh32/AI_Resume_Analyzer.git
 cd AI-Resume-Analyzer
 ```
 
@@ -165,9 +165,9 @@ Frontend displays score, breakdown and suggestions
 
 ## 👨‍💻 Author
 
-**Harshit Singh**
-- 🎓 B.Tech Information Technology | Techno Main Salt Lake | MAKAUT
-- 💼 GitHub: [@harsh2005-singh](https://github.com/harsh2005-singh)
+**Raunak Singh**
+- 🎓 B.Tech Information Technology | MCKV INSTITUTE OF ENGINEERING | MAKAUT
+- 💼 GitHub: (https://github.com/Raunak-singh32)
 - 🔍 Open to Internship Opportunities in Full Stack Development
 
 ---
