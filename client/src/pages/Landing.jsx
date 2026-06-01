@@ -138,7 +138,7 @@ function Landing() {
       {/* Footer */}
       <footer style={styles.footer}>
         <p style={styles.footerText}>
-          Developed by Harshit Singh • Powered by Gemini AI
+          Developed by Raunak Singh • Powered by Gemini AI
         </p>
       </footer>
 
