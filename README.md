@@ -165,7 +165,7 @@ Frontend displays score, breakdown and suggestions
 
 ## 👨‍💻 Author
 
-**Raunak Singh**
+**Raunak Kumar**
 - 🎓 B.Tech Information Technology | MCKV INSTITUTE OF ENGINEERING | MAKAUT
 - 💼 GitHub: (https://github.com/Raunak-singh32)
 - 🔍 Open to Internship Opportunities in Full Stack Development
