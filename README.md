@@ -2,11 +2,11 @@
 
 > An AI-powered resume analyzer that helps you beat Applicant Tracking Systems and land your dream job.
 
-[![Live Demo](https://img.shields.io/badge/Live%20Demo-Visit%20App-4f46e5?style=for-the-badge)](https://ai-resume-analyzer-ecru-omega.vercel.app)
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Visit%20App-4f46e5?style=for-the-badge)](https://ai-resume-analyzer-mxekzqm27-raunak-kumar-singh-s-projects.vercel.app)
 [![GitHub](https://img.shields.io/badge/GitHub-Repository-181717?style=for-the-badge&logo=github)](https://github.com/Raunak-singh32/AI_Resume_Analyzer)
 
 ## 🌐 Live Demo
-**[https://ai-resume-analyzer-ecru-omega.vercel.app](https://ai-resume-analyzer-ecru-omega.vercel.app)**
+**[https://ai-resume-analyzer-mxekzqm27-raunak-kumar-singh-s-projects.vercel.app](https://ai-resume-analyzer-mxekzqm27-raunak-kumar-singh-s-projects.vercel.app)**
 
 > ⚡ Try it without creating an account using the **"Try Without Login"** button!
 
@@ -167,7 +167,7 @@ Frontend displays score, breakdown and suggestions
 
 **Raunak Kumar**
 - 🎓 B.Tech Information Technology | MCKV INSTITUTE OF ENGINEERING | MAKAUT
-- 💼 GitHub: (https://github.com/Raunak-singh32)
+- 💼 GitHub: https://github.com/Raunak-singh32
 - 🔍 Open to Internship Opportunities in Full Stack Development
 
 ---
