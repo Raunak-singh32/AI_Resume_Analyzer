@@ -25,7 +25,7 @@ function Upload() {
       formData.append('resume', file);
 
       const uploadRes = await axios.post(
-        'https://ats-pro-backend.onrender.com/api/resume/upload',
+        'https://ai-resume-analyzer-dt6p.onrender.com/api/resume/upload',
         formData,
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -34,7 +34,7 @@ function Upload() {
 
       // Step 2 - Analyze with Gemini
       const analyzeRes = await axios.post(
-        'https://ats-pro-backend.onrender.com/api/resume/analyze',
+        'https://ai-resume-analyzer-dt6p.onrender.com/api/resume/analyze',
         { resumeText, jobDescription },
         { headers: { Authorization: `Bearer ${token}` } }
       );

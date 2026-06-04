@@ -16,7 +16,7 @@ function Register() {
     e.preventDefault();
     setLoading(true);
     try {
-      const res = await axios.post('https://ats-pro-backend.onrender.com/api/auth/register', {
+      const res = await axios.post('https://ai-resume-analyzer-dt6p.onrender.com/api/auth/register', {
         name,
         email,
         password

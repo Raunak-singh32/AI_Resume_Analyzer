@@ -16,7 +16,7 @@ function Results() {
     const fetchAnalysis = async () => {
       try {
         const res = await axios.get(
-          `https://ats-pro-backend.onrender.com/api/resume/analysis/${id}`,
+          `https://ai-resume-analyzer-dt6p.onrender.com/api/resume/analysis/${id}`,
           { headers: { Authorization: `Bearer ${token}` } }
         );
         setAnalysis(res.data);
@@ -88,7 +88,7 @@ function Results() {
         </button>
         <button
           onClick={() => window.open(
-            `https://ats-pro-backend.onrender.com/api/resume/download/${id}?token=${token}`,
+            `https://ai-resume-analyzer-dt6p.onrender.com/api/resume/download/${id}?token=${token}`,
             '_blank'
           )}
           style={{ ...styles.button, backgroundColor: '#22c55e' }}>

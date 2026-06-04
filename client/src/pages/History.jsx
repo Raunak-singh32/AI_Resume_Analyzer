@@ -13,7 +13,7 @@ function History() {
     const fetchHistory = async () => {
       try {
         const res = await axios.get(
-          'https://ats-pro-backend.onrender.com/api/resume/history',
+          'https://ai-resume-analyzer-dt6p.onrender.com/api/resume/history',
           { headers: { Authorization: `Bearer ${token}` } }
         );
         setAnalyses(res.data);

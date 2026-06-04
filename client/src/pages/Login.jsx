@@ -15,7 +15,7 @@ function Login() {
     e.preventDefault();
     setLoading(true);
     try {
-      const res = await axios.post('https://ats-pro-backend.onrender.com/api/auth/login', {
+      const res = await axios.post('https://ai-resume-analyzer-dt6p.onrender.com/api/auth/login', {
         email,
         password
       });

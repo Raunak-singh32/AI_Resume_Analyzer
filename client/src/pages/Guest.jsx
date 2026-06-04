@@ -31,7 +31,7 @@ function Guest() {
       formData.append('resume', file);
 
       const uploadRes = await axios.post(
-        'https://ats-pro-backend.onrender.com/api/resume/upload-guest',
+        'https://ai-resume-analyzer-dt6p.onrender.com/api/resume/upload-guest',
         formData
       );
 
@@ -39,7 +39,7 @@ function Guest() {
 
       // Step 2 - Guest analyze
       const analyzeRes = await axios.post(
-        'https://ats-pro-backend.onrender.com/api/resume/guest-analyze',
+        'https://ai-resume-analyzer-dt6p.onrender.com/api/resume/guest-analyze',
         { resumeText, jobDescription }
       );
 
