@@ -26,8 +26,8 @@ const analyzeLimiter = rateLimit({
 app.use(express.json());
 app.use(cors({
   origin: [
-    'http://localhost:5173',
-    'https://ai-resume-analyzer-ecru-omega.vercel.app'
+   'http://localhost:5173',
+    process.env.CLIENT_URL
   ],
   credentials: true
 }));
