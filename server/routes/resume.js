@@ -71,7 +71,7 @@ router.post('/analyze', protect, async (req, res) => {
   try {
     const { resumeText, jobDescription } = req.body;
 
-    const model = genAI.getGenerativeModel({ model: 'gemini-2.5-flash' });
+    const model = genAI.getGenerativeModel({ model: 'gemini-3.6-flash' });
 
     const prompt = `
       You are an ATS (Applicant Tracking System) expert.
@@ -247,7 +247,7 @@ router.post('/guest-analyze', async (req, res) => {
   try {
     const { resumeText, jobDescription } = req.body;
 
-    const model = genAI.getGenerativeModel({ model: 'gemini-2.5-flash' });
+    const model = genAI.getGenerativeModel({ model: 'gemini-3.6-flash' });
 
     const prompt = `
       You are an ATS expert.
@@ -289,7 +289,7 @@ router.post('/learning-path', protect, async (req, res) => {
     const missingKeywords = analysis.atsSections?.keywords?.missing || [];
     const suggestions = analysis.topSuggestions || [];
 
-    const model = genAI.getGenerativeModel({ model: 'gemini-2.5-flash' });
+    const model = genAI.getGenerativeModel({ model: 'gemini-3.6-flash' });
 
     const prompt = `
       You are a senior tech career coach.
