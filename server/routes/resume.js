@@ -275,5 +275,59 @@ router.post('/guest-analyze', async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 });
+// Generate personalized learning path from analysis
+router.post('/learning-path', protect, async (req, res) => {
+  try {
+    const { analysisId } = req.body;
 
+    const analysis = await Analysis.findById(analysisId);
+    if (!analysis) {
+      return res.status(404).json({ message: 'Analysis not found' });
+    }
+
+    const missingSkills = analysis.atsSections?.skills?.missing || [];
+    const missingKeywords = analysis.atsSections?.keywords?.missing || [];
+    const suggestions = analysis.topSuggestions || [];
+
+    const model = genAI.getGenerativeModel({ model: 'gemini-2.0-flash' });
+
+    const prompt = `
+      You are a senior tech career coach.
+      Based on this resume gap analysis, create a personalized 6-week learning path.
+
+      Missing Skills: ${missingSkills.join(', ')}
+      Missing Keywords: ${missingKeywords.join(', ')}
+      Top Suggestions: ${suggestions.join(', ')}
+
+      Return ONLY a JSON object with no extra text, no markdown, no backticks:
+      {
+        "totalWeeks": 6,
+        "summary": "<one line overview of the learning path>",
+        "weeks": [
+          {
+            "week": 1,
+            "focus": "<main focus area>",
+            "topics": ["<topic1>", "<topic2>", "<topic3>"],
+            "resources": [
+              { "name": "<resource name>", "url": "<real url>", "type": "Free" },
+              { "name": "<resource name>", "url": "<real url>", "type": "Free" }
+            ],
+            "goal": "<what they should achieve by end of this week>"
+          }
+        ],
+        "quickWins": ["<action 1>", "<action 2>", "<action 3>"]
+      }
+    `;
+
+    const result = await model.generateContent(prompt);
+    const response = result.response.text();
+    const cleaned = response.replace(/```json|```/g, '').trim();
+    const learningPath = JSON.parse(cleaned);
+
+    res.json(learningPath);
+
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+});
 module.exports = router;
