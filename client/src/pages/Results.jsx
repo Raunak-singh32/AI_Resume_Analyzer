@@ -73,6 +73,7 @@ function Results() {
 
       {/* Top Suggestions */}
       <SuggestionBox suggestions={analysis.topSuggestions} />
+      <LearningPath analysisId={id} token={token} />
 
       {/* Buttons */}
       <div style={styles.buttonRow}>
@@ -172,6 +173,79 @@ const styles = {
     cursor: 'pointer',
     fontWeight: '500'
   }
+};
+function LearningPath({ analysisId, token }) {
+  const [path, setPath] = useState(null);
+  const [loading, setLoading] = useState(false);
+
+  const fetchPath = async () => {
+    setLoading(true);
+    try {
+      const res = await axios.post(
+        'https://ai-resume-analyzer-dt6p.onrender.com/api/resume/learning-path',
+        { analysisId },
+        { headers: { Authorization: `Bearer ${token}` } }
+      );
+      setPath(res.data);
+    } catch (err) {
+      console.error(err);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  return (
+    <div style={lpStyles.card}>
+      <h3 style={lpStyles.title}>🗺️ Personalized Learning Path</h3>
+      {!path && !loading && (
+        <button onClick={fetchPath} style={lpStyles.btn}>
+          ✨ Generate My 6-Week Learning Path
+        </button>
+      )}
+      {loading && <p style={lpStyles.muted}>⏳ Generating your personalized path...</p>}
+      {path && (
+        <>
+          <p style={lpStyles.summary}>{path.summary}</p>
+          {path.weeks.map(w => (
+            <div key={w.week} style={lpStyles.week}>
+              <h4 style={lpStyles.weekTitle}>Week {w.week} — {w.focus}</h4>
+              <p style={lpStyles.muted}>🎯 {w.goal}</p>
+              <div style={lpStyles.topics}>
+                {w.topics.map((t, i) => <span key={i} style={lpStyles.tag}>{t}</span>)}
+              </div>
+              <div style={{ marginTop: '10px' }}>
+                {w.resources.map((r, i) => (
+                  <a key={i} href={r.url} target="_blank" rel="noreferrer" style={lpStyles.link}>
+                    📚 {r.name} <span style={lpStyles.free}>{r.type}</span>
+                  </a>
+                ))}
+              </div>
+            </div>
+          ))}
+          <div style={lpStyles.week}>
+            <h4 style={lpStyles.weekTitle}>⚡ Quick Wins</h4>
+            {path.quickWins.map((q, i) => (
+              <p key={i} style={lpStyles.muted}>✅ {q}</p>
+            ))}
+          </div>
+        </>
+      )}
+    </div>
+  );
+}
+
+const lpStyles = {
+  card: { backgroundColor: '#13131f', borderRadius: '16px', padding: '28px', marginBottom: '20px', border: '1px solid #1e1e2e' },
+  title: { color: '#a5b4fc', marginBottom: '16px', fontSize: '18px' },
+  summary: { color: '#e2e8f0', marginBottom: '16px', lineHeight: '1.6' },
+  week: { backgroundColor: '#0f0f1a', borderRadius: '12px', padding: '16px', marginBottom: '12px', border: '1px solid #1e1e2e' },
+  weekTitle: { color: '#c4b5fd', marginBottom: '8px', fontSize: '15px' },
+  muted: { color: '#6b7280', fontSize: '13px', marginBottom: '6px' },
+  topics: { display: 'flex', flexWrap: 'wrap', gap: '8px', margin: '10px 0' },
+  tag: { backgroundColor: '#1e1e3a', color: '#a5b4fc', padding: '4px 10px', borderRadius: '20px', fontSize: '12px' },
+  link: { display: 'block', color: '#60a5fa', fontSize: '13px', marginBottom: '4px', textDecoration: 'none' },
+  free: { backgroundColor: '#14532d', color: '#86efac', padding: '2px 6px', borderRadius: '4px', fontSize: '11px', marginLeft: '6px' },
+  btn: { padding: '12px 24px', background: 'linear-gradient(135deg, #4f46e5, #7c3aed)', color: 'white', border: 'none', borderRadius: '8px', fontSize: '15px', cursor: 'pointer' }
 };
 
 export default Results;
