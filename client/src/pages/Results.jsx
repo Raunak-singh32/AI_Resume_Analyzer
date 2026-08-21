@@ -1,4 +1,3 @@
-cat > client/src/pages/Results.jsx << 'ENDOFFILE'
 import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
@@ -160,4 +159,3 @@ const styles = {
 };
 
 export default Results;
-ENDOFFILE
